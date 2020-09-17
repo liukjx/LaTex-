@@ -1,0 +1,564 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\begin{document}
+
+\chapter*{第三章 知识框架 \quad 一元积分学}
+\begin{center}
+    数一为常规考点,数二,数三为考查重点    
+\end{center}
+
+\[
+\text{\ }
+\begin{cases}
+    \text{不定积分}
+        \begin{cases}
+            \text{两类换元法}
+                \begin{cases}
+                    \text{第一类(不定积分考的多)}\\
+                    \text{第二类(定积分，定积分不定积分都有，比较难的是三角分式有理分式)}
+
+                \end{cases}\\
+            \text{分部积分(多在证明题中出现)}\\
+            \text{原函数的含义}
+        \end{cases}\\
+    \text{定积分}
+        \begin{cases}
+            \text{可积的定义与图像}\\
+            \text{计算}
+                \begin{cases}
+                    \text{常规型}\\
+                    \text{带有极限符号的}
+                \end{cases}\\
+            \text{证明题(最常见的一般是构造函数，因为变上线积分也是一种函数)}
+        \end{cases}\\
+    \text{反常积分}
+        \begin{cases}
+            \text{反常积分的计算}\\
+            \text{判断敛散性，选择题考(数三不考)}
+        \end{cases}\\
+    \text{定积分的应用}
+        \begin{cases}
+            \text{几何应用(考试热点，常在填空题或大题中与微分方程一起考察)}\\
+            \text{物理应用(数三不考)}\\
+            \text{经济应用(数一,二不考)}
+        \end{cases}\\
+\end{cases}    
+\]
+
+\section*{一 \quad 误区}
+
+\quad \ 很多人认为在某一区间上存在原函数和可积是同一回事，
+其实是不对的
+
+原函数是相对不定积分而言的
+
+可积是相对于定积分而言，即定积分的值存在
+
+\noindent 那么
+
+1.什么情况下不存在原函数呢？
+
+有一类间断点时一定不存在原函数，
+    有第二类间断点时,
+有可能存在原函数，也有可能没有.
+
+
+比如$\displaystyle{f(x)=\left\{\begin{array}{ll}
+    2 x \sin \frac{1}{x}-\cos \frac{1}{x} & (x \neq 0) \\
+    0 & x=0
+    \end{array}\right.}$有原函数，为
+$\displaystyle{F(x)=\left\{\begin{array}{l}
+        x^{2} \sin \frac{1}{x}  \quad x \neq 0 \\
+        0 \qquad \qquad x=0
+        \end{array}\right.}$
+
+2.什么情况下不可积？($\int _{a}^{b}f(x)\mathrm{d}x$的值存在)
+\begin{enumerate}
+    \item f(x)在$[a,b]$上连续，则可积
+    
+    \item f(x)在$[a,b]$上有界，且只有有限个间断点(可去，跳跃，震荡有界均可)则可积
+    
+    \item 有无穷间断点的时候，有可能可积也有可能不可积(这就是要变了了瑕积分问题)
+    
+\end{enumerate}
+
+
+
+\section*{二 \quad 不定积分}
+
+\[
+\text{换元法}    
+\begin{cases}
+    \text{第一类：临场发挥，随机拼凑}\\
+    \text{第二类}
+        \begin{cases}
+            \text{三角换元(其中n为常数)}
+                \begin{cases}
+                    \text{出现}\left(a^{2}-x^{2}\right)^{m}\text{型，经常令}x=a\sin t\\
+                    \text{出现}\left(a^{2}+x^{2}\right)^{m}\text{型，经常令}x=a\tan t\\
+                    \text{出现}\left(x^{2}-a^{2}\right)^{m}\text{型，经常令}x=a \sec t\\
+                    \text{出现形如}(\arcsin x)^{m},(\arctan x)^{m}\text{的反函数时，}\\
+                    \text{经常令}x=\sin t \text{或}x=\tan t\\
+                \end{cases}\\  
+            \text{倒代换：出现头重脚轻(分母次数比分子高很多时)}\text{可以考虑使用}x=\frac{1}{t}
+        \end{cases}\\
+\end{cases}
+\]
+
+分部积分：“指三幂对反”通常情况下谁在前面谁充当$v^{\prime}$(特别地，有些分部积分求不出来，但可以内部抵掉，或是
+产生一个负的相同项后转到等号左侧)
+
+注：第一类换元法：
+
+1.当出现$\int R (\sqrt[n]{ax+b},\sqrt[m]{ax+b})\mathrm{d}x$型时，经常令
+
+\[
+  \sqrt[k]{ax+b} =t,k\text{为}n,m\text{的最小公倍数} 
+\]
+
+2.当出现$\displaystyle{\int R\left(x,\sqrt{\frac{ax+b}{cx+d}}\right)\mathrm{d}x}$型，经常令$\displaystyle{\sqrt{\frac{ax+b}{cx+d}}=t}$
+
+3.对于$\sin ^{2k}x\cos ^{2l}x,(k,l \in N)$型函数，总可利用三角恒等式化成cos2x的多项式
+
+\[
+    \sin ^{2} x=\frac{1}{2}(1-\cos 2 x)
+\]
+
+\[
+    \cos ^{2} x=\frac{1}{2}(1+\cos 2 x)  
+\]
+
+4.对于$\tan ^{n} x \sec ^{2 k} x$或$\tan ^{2 k-1} x \sec ^{n} x\left(n, k, \in N_{+}\right)$型函数的积分可依次作变换
+$u=\tan x$或$u=\sec x$求得结果
+
+\section*{专题一 \quad 分式的不定积分问题}
+\[
+\text{分式}
+\begin{cases}
+    \text{有理分式}\\
+    \text{三角分式}
+\end{cases}    
+\]
+
+\subsection*{一：有理分式}
+
+
+
+\emph{步骤一}：观察，如果很容易拆项，裂项，直接拆开变成简单或可以使用全书上总结的可以带公式的分式
+
+\vspace{2ex}
+
+\noindent  \emph{步骤二}：观察不出来时，先判断是否是真假分式，如果是假分式，先将其拆成一个真分式加一个多项式
+
+\vspace{2ex}
+
+\noindent  \emph{步骤三}：处理真分式
+    \begin{enumerate}
+        \item 若分母含有$(x-a)^{m}$，分解为$\displaystyle{\frac{A_{1}}{x-a}-\frac{A_{2}}{(x-a)^{2}}+\cdots +\frac{A_{m}}{(x-a)m}}$
+        \item 若分母中含有$(ax^{2}+bx+c)^{m}$且$b^{2}-4ac<0$，则分解为$\displaystyle{\frac{A_{1} x+B_{1}}{\theta x^{2}+b x+c}+\frac{A_{2} x+B_{2}}{\left(a x^{2}+b x+c\right)^{2}}}+\cdots+\frac{A _{m} x+B m}{\left(a x^{2}+b x-c\right)^{m}}(m \text{很少}\ge 2)$
+    \end{enumerate}
+
+\vspace{2ex}
+
+注：步骤一二可能共存，关键在于求出$A_{1},A_{2},\cdots,A_{n},B_{1},B_{2},\cdots,B_{n}$这些分数，可以用待定系数法求出这些系数，也可以用拉普拉斯方程中的方法
+
+(如果步骤三失效，可尝试用倒代换等其他方法)
+
+\subsection*{二：三角分式}
+
+\begin{enumerate}
+    \item 半角化
+          \[
+          \text{半角公式}
+          \begin{cases}
+              \sin 2x = 2 \sin x \cos x\\
+              \cos 2x = 2 \cos ^{2} x -1 =1-2\sin ^{2} x=\cos ^{2}x-\sin ^{2}x
+          \end{cases}    
+          \]
+    \item $\displaystyle{\frac{c\sin x+d \cos x}{a \sin x +b\cos x}}$型
+    \item 万能公式(转化成幂函数分式)
+    \item 若出现$a \cos x +b \sin x$可以变成$\sqrt{a^{2}+b^{2}}\sin (x + \theta),\theta = \arctan \frac{a}{b}$
+    \item 积化和差，可能会用到，但和差化积比较少，因为乘法更复杂
+    \item 把被积函数变成$f(\tan x)$ \quad $\mathrm{d}x$变成$\mathrm{d}\tan x$，
+    
+    常用到半角公式$1+\sin 2x =(\sin x +\cos)^{2}，1=\sin^{2}+\cos ^{2}x$
+\end{enumerate}
+
+\section*{定积分补充公式}
+
+\begin{enumerate}
+    \item $\displaystyle{\left|\int_{a}^{b} f(x) d x\right| \le \int_{a}^{b} | f(x) | d x \quad(a \leq b)}$
+    \item 柯西不等式 $\displaystyle{\left(\int_{a}^{b} f(x) g(x) d x\right)^{2} \le \int_{a}^{b} f^{2}(x) d x \int_{a}^{b} g^{2}(x) d x}$
+    \item 定积分中值定理 $\displaystyle{\int_{a}^{b} f(x) d x=f(\xi)(b-a)}$用介值定理证明$\xi \in [a,b]$
+    设$\displaystyle{F(x)=\int_{a}^{x} f(t) d t}$当$F(x)$在[a，b]上满足拉格朗日定理的条件时，即F(x)在[a，b]上连续，在(a，b)上可导
+    ，则$\exists \xi \in (a,b)$使得$F(b)-F(a)=F^{\prime}(\xi)(b-a)$其中$F(b)=\int _{a}^{b} (x)\mathrm{d}x\quad F(a)=0 \quad F^{\prime}(\xi)=f(\xi)$
+    %上面这句后面的公式不是太明白什么意思
+
+    拓展形式：$\int_{a}^{b} f(x) g(x) d x=f(\xi) \int_{a}^{b} g(x) d x(g(x)\text{不变号},\xi \in [a,b])$
+    \item $\displaystyle{\int_{0}^{\frac{\pi}{2}} f(\sin x) d x=\int_{0}^{\frac{\pi}{2}} f(\cos x) d x}$
+    
+    引申华里士公式$\displaystyle{\int_{0}^{\frac{\pi}{2}} \sin ^{n} x \mathrm{d} x=\int_{0}^{\frac{\pi}{2}} \cos ^{n} x \mathrm{d} x=\left\{\begin{array}{ll}
+        \frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \frac{n-5}{n-4} \cdot \cdots \cdot \frac{2}{3}, & n \ge 3 \text { 为奇数 } \\
+        \frac{n-1}{n} \cdot \frac{n-3}{n-2} \cdot \frac{n-5}{n-4} \cdot \cdots \cdot \frac{1}{2} \cdot \frac{\pi}{2}, & n \ge 2 \text { 为偶数 }
+        \end{array}\right.}$
+    \item $\displaystyle{\int_{0}^{\pi} f(\sin x) d x=\int_{0}^{\frac{\pi}{2}} f(\cos x) d x}$
+    \item $\displaystyle{\int_{0}^{\pi} x f(\sin x) d x}=\frac{\pi}{2} \int_{0}^{\pi} f(\sin x) d x$
+    
+    引申：(1)$\displaystyle{\int_{0}^{\pi} x f(|\cos x|) d x=\frac{\pi}{2} \int_{0}^{\pi} f(|\cos x|) d x}$
+
+    \qquad \quad (2)$\displaystyle{\int_{0}^{\pi} x f\left(\cos ^{2} x\right) d x=\frac{\pi}{2} \int_{0}^{\pi} f\left(\cos ^{2} x\right) d x}$
+
+
+    \item 同期函数的定积分性质
+    
+    \vspace{2ex}
+    
+    \quad \qquad $\displaystyle{\int_{n}^{a+T} f(x) d x=\int_{0}^{T} f(x) d x}$
+
+    \quad \qquad $\displaystyle{\int_{0}^{n \pi} f(x) d x=n \int_{0}^{T} f(x) d x}$
+
+    \quad \qquad 引申1 $\displaystyle{\int_{a}^{a+n T} f(x) d x=n \int_{0}^{T} f(x) d x}$
+
+\end{enumerate}
+
+\section*{定积分的计算题}
+
+\[
+    \begin{array}{c}
+        \text{带有具体被积函数表达式的定积分计算}\\
+        \text{先看有无瑕点和无穷区间}\\
+        \text{有则归为反常积分的计算}
+    \end{array}
+    \begin{cases}
+        \text{1.首先看有无奇偶可用，简化运算}\\
+        \text{2.其次看能否用讲过的三角函数，周期函数公式来简化运算}\\
+        \text{3.对于第一类换元法，常用的换元法是}t=a+b-x\\
+        \quad \text{特别是对称区间时，经常对其中半个区间使用，就可以聚合}\\
+        \quad \text{成一个区间}(t=a+b-x)\text{换元法经常用在证明积分大(小)于}\\
+        \quad \text{0的证明题中间可能不对称}\\
+        %中间可能不对称是什么意思
+
+        \text{4.第一类换元中的其他方法，第二类换元法，分部积分}\\
+        \quad \text{幂函数分式，三角分式和计算不定积分一样，先求出原}\\
+        \quad \text{函数，然后带入上下限，注意上下限有时候要相应的改变}\\
+
+        \text{5.被积函数中带有绝对值}\min {},\max {}\text{要注意重新划分区间}\\
+        \quad \text{因为不同区间内被积函数表达式不同}\\
+
+        \text{6.转化成二重积分再做计算(有时候要改变积分次序)}\\
+    \end{cases}
+\]
+
+注：1.2.3.6是定积分才有，不定积分没有的
+
+带有定积分的求极限：问题(不要使用积分中值定理)，极限有可能加在定积分号的外面，也有可能加在被积函数上：直接使用夹逼准则也就是放缩被积函数
+
+\section*{定积分的证明题(1.2.3.4.5.6都可能用在定积分不等式中)}
+
+\[
+\text{\ }    
+\begin{cases}
+    \text{1.比较带有具体函数表达式的定积分大小问题}\\
+    \text{2.构造函数，配合求导，求最值等方法证明定积分不等式}\\
+    \quad \text{特别地如果含a，b两个常数，经常把其中一个设为x，以前积分里的x变成t在讨论}
+    \text{3.使用放缩证明定积分不等式}
+        \begin{cases}
+            \text{放缩被积函数}\\
+            \text{放缩被积分区间(一般是缩小)}\\
+        \end{cases}\\
+    \text{4.对被积函数进行拉格朗日或泰勒展开}\\
+    \text{5.使用公式证明}
+        \begin{cases}
+            \text{不等式}
+                \begin{cases}
+                    \text{柯西施瓦茨不等式}\\
+                    \text{绝对值不等式}\left|\int_{a}^{b} f(x) d x\right| \le \int_{a}^{b}|f(x)| d x\\
+                    \text{当} f(x)\ge g(x) \text{时}\int_{a}^{b} f(x) d x \geq \int_{a}^{b} g(x) d x,(b>a)
+                \end{cases}\\
+            \text{公式：补充的周期函数，三角函数，积分中值定理及拓展形式}
+        \end{cases}\\
+    \text{6.转化成二重积分再证明}\\
+    \text{7.定积分的零点类问题}
+        \begin{cases}
+            \text{法一：写出定积分的变上限函数形式，变上限函数也是函数}
+                \begin{cases}
+                    \text{零点定理}\\
+                    \text{罗尔定理}
+                \end{cases}\\
+            \text{法二：使用积分中值定理(一般是证明题中的辅助手段)}\\
+        \end{cases}\\
+\end{cases}
+\]
+
+
+注：变上限函数的零点问题又回归到之前讲的微分学中的零点问题了，零点和罗尔都只能证明至少有一个零点，如果还要证明零点是唯一的，则需要通过求导说明其是单调的，罗尔定理经常使用我们前面讲过的还原法
+
+\vspace{2ex}
+
+2中含a，b两个参数的证明不等式问题，经常令其中一个常数设成x，另一个不动，然后借助求导求最值的方法，很类似之前的不等式专题中的法二不能分离参数的形式
+
+\section*{小专题一}
+
+已知f(x)和$\int_{a}^{b} f(x) g(x) d x$的关系(g(x)是具体函数，有时候取1),求f(x)的函数表达式
+
+步骤一:设$\int_{a}^{b} f(x) g(x) d x=A$
+
+步骤二：对整个函数等式左右两侧同乘以g(x)后，再取从a到b的积分，然后通过该方程解出未知数A，从而得f(x)的表达式
+
+\vspace{2ex}
+
+\noindent 拓展1：已知f(x)同时和$\int _{a}^{b}f(x)d x \quad \int _{c}^{d}f(x)dx$的函数关系，让求f(x)？
+
+步骤一：设$\int _{a}^{b}f(x)dx=A \quad \int _{c}^{d}f(x)dx=B$
+
+步骤二：先对整个函数等式取从a到b的积分，然后再对整个函数取从c到d的积分，得到一个一元二次方程，解出来未知数A，B，从而得到f(x)的表达式
+
+\vspace{2ex}
+
+\noindent 拓展2：有些重积分也会用到该专题
+
+\section*{小专题二}
+
+比较有具体被积函数表达式的定积分大小
+
+\[
+\text{\ }    
+\begin{cases}
+    \text{定积分}
+        \begin{cases}
+            \text{比较被积函数大小(前提上限大于下限)}\\
+            \text{做差合并区间}
+        \end{cases}\\
+    \text{重积分(选择题居多)}
+        \begin{cases}
+            \text{积分区域是一样时，比较被积函数的大小}\\
+            \text{被积函数相同时，比较积分区域的大小}
+        \end{cases}
+\end{cases}
+\]
+
+\section*{定积分比大小}
+
+法一：如果可以先借助奇偶性简化，然后根据$f(x)>g(x)$则
+$\displaystyle{\int _{a}^{b}f(x)dx > \int _{a}^{b}g(x)dx}$这个定理来判断，实际上就是比较被积函数的大小
+
+\vspace{2ex}
+
+\noindent 法一：对积分区间分段，通过换元把不同区间变成同一个区间，然后合并积分，在新区间内的被积函数恒大于0
+
+\section*{小专题三}
+
+利用分部积分证明或求定积分
+
+情形一：题干已知$f(x)，f^{\prime}(x)\cdots$的某些具体数值，被积函数中含有更高阶的导数，采用分部积分$\int u v^{\prime}dx=uv-\int u^{\prime}vdx$连续让那个更高阶的导数充当$v^{\prime}$，每次得到$uv$后代入题干中的某些条件，可能要用多次分部积分
+
+例一：f(x)在[a，b]上二阶连续时，又$f(a)=f^{\prime}(a)=0$
+
+求证：$\displaystyle{\frac{1}{2} \int _{a}^{b}f^{\prime \prime}(x)(x-b)^{2}dx=\int _{a}^{b}f(x)dx}$
+
+例二：$f(0)=f(1)=0\quad$ 求证$\displaystyle{\int _{0}^{1}f(x)dx=-\frac{1}{2}\int _{0}^{1}(x-x^{2})f^{\prime\prime}(x)dx}$
+
+情形二：题干有变上限函数，让球的定积分被积函数中含有变上限函数
+
+采用分部积分$\int u v^{\prime}dx=uv-\int u^{\prime} v dx$让那么变上限函数充当u，其余部分充当$v^{\prime}$
+
+例一：设$\displaystyle{G(x)=\int _{1}^{x^{2}}\frac{t}{\sqrt{1+t^{3}}}dt}$,则$\displaystyle{\int _{0}^{1}xG(x)dx=}$\underline{\hbox to 10mm{}}
+
+例二：设$G^{\quad \prime}=\arcsin (x-1)^{2},G(0)=0$求$\displaystyle{\int _{0}^{1}G(x)dx=}$\underline{\hbox to 10mm{}}
+
+\section*{小专题四 \quad 反常积分的计算}
+
+步骤一：首先看能不能对$\int _{0}^{+\infty}$ 上的函数使用$\Gamma(x)$函数的公式，或着变形成$\Gamma(x)$后直接套用关于$\Gamma(x)$的现成公式
+
+\vspace{2ex}
+
+\noindent 步骤二：若不能套公式看区间内部有没有瑕点
+
+\noindent 步骤三：
+
+1.如果内部无瑕点，直接装不知道，按定积分计算，求出原函数，带入端点值相减(如果端点处是瑕点或无穷，则端点处的反常积分实则就是求极限问题，如果两个极限有一个或两个不存在，就是发散的)
+
+2.如果内部有瑕点，必须以瑕点为中断点，把区间沿瑕点，断成两个，逐个区间装不知道，使用求定积分的办法
+
+\section*{小专题五 \quad 审敛法修改版}
+
+1.设$f(x)$在区间$[a,+\infty]([-\infty,b])$上连续，如果$\exists$P>1
+
+\vspace{2ex}
+
+使得$\displaystyle{\lim \limits_{\substack{x \rightarrow+\infty\\x \rightarrow -\infty}} x^{p} f(x)=}$常数 ， 那么收敛
+
+\vspace{2ex}
+
+如果$\displaystyle{\lim \limits_{\substack{x \rightarrow+\infty\\x \rightarrow -\infty}} x f(x)=}$ 等于不为0的常数或为无穷，那么反常积分发散
+
+注：若$x^{p}f(x)\rightarrow \infty$或$xf(x)=0$极限审敛法失效，敛散性判别需改换方式重判
+
+\vspace{2ex}
+
+\noindent 2.$f(x)$在[a，b]上连续，如果$\exists q$使$\lim \limits_{x \rightarrow a^{+}}(x-a)^{q}f(x)$(或$\lim \limits_{x \rightarrow b^{-}}(b-x)^{q}f(x))$存在，那就收敛
+
+\vspace{2ex}
+
+如果$\lim \limits _{x \rightarrow a^{+}}(x-a)f(x)$(或$\lim \limits _{x \rightarrow b^{-}}(b-x)f(x)$)等于不为0的常数或趋于无穷，那就发散
+
+(数三不要求掌握)
+
+\section*{小专题六 \quad 定积分的应用}
+
+\vspace{3ex}
+
+\[
+\text{\ }    
+\begin{cases}
+    \text{几何}
+        \begin{cases}
+            \text{面积}
+                \begin{cases}
+                    \text{直角坐标}\\
+                    \text{极坐标}
+                \end{cases}\\
+            \text{弧长}
+                \begin{cases}
+                    \text{一般参数式}\\
+                    \text{直角坐标}\\
+                    \text{极坐标}
+                \end{cases}\\
+            \text{曲面积}\\
+            \text{体积}
+                \begin{cases}
+                    \text{旋转体体积}
+                        \begin{cases}
+                            \text{模型一：圆纸片的叠加(圆台模型)}\\
+                            \text{模型二：卷状卫生纸模型}
+                        \end{cases}\\
+                    \text{平行截面积已知的立体体积}\\
+                \end{cases}\\
+            \text{平均值}\frac{\int _{a}^{b}f(x)dx}{b-a}\\
+        \end{cases}\\
+    \text{物理}
+        \begin{cases}
+            \text{质量}\\
+            \text{形心，质心(二重积分有公式)}\\
+            \text{力}
+                \begin{cases}
+                    \text{引力}a\frac{m_{1}m_{2}}{r^{2}}\\
+                    \text{压力}PS\\
+                    \text{弹力}F=kx\\
+                    \text{重力}mg
+                \end{cases}\\
+            \text{功}W=F·S=FS\cos \theta
+        \end{cases}\\
+    \text{经济(数一，二不考)}\\
+\end{cases}
+\]
+
+\section*{1.平面中的三种坐标形式}
+
+1.直角坐标：y=y(x)
+2.参数式$\begin{array}{l}
+    x=x(t) \\
+    y=y(t)
+    \end{array}$
+3.极坐标$\rho=\rho(\theta)$
+
+例如$x^{2}+y^{2}=1$通过$\begin{array}{l}
+    x=\rho \cos \theta \\
+    y=\rho \sin \theta
+    \end{array}$
+的极坐标转化成$\rho = 1 $的极坐标形式,其中有两个$\rho \theta$未知数
+
+\section*{几种常见图形}
+
+1.圆$x^{2}+y^{2}=a^{2}$，参数方程形式$\begin{array}{c}
+x=a\cos \theta \\
+y=b \sin \theta 
+\end{array}
+$$(0 \le \theta \le 2\pi)$
+
+\noindent 2.椭圆：$\displaystyle{}$参数方程形式$\begin{array}{c}
+    x=a\cos \theta \\
+    y=b \sin \theta 
+    \end{array}
+    $$(0 \le \theta \le 2\pi)$
+
+
+\noindent 3.摆线：参数方程$\displaystyle{\begin{array}{l}
+    x=a(t-\sin t) \\
+    y=a(1-\cos t)
+    \end{array}}$
+
+\noindent 4.星形线 $x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}$参数的方程$\begin{array}{l}
+    x=a \cos ^{3} \theta \\
+    y=a \sin ^{3} \theta
+    \end{array}$$(\cos \theta \le 2 \pi)$
+    
+\noindent 5. 心形线 $a(1+\cos \theta) (a>0)$上半部分为$[0，\pi]$
+$S=2S_{A1}=2\int _{0}^{\pi} \frac{1}{2}\theta^{2}(1+\cos \theta)^{2}d \theta \quad l=2l_{1}$
+
+\noindent 6.伯努利双扭线(双重积分中考察，直接转化成极坐标计算)
+
+$x^{2}+y^{2}=a^{2}(x^{2}-y^{2})$极坐标形式$\begin{array}{l}
+    x=\rho \cos \theta \\
+    y=\rho \sin \theta
+    \end{array}\Rightarrow \rho ^{2}=a^{2}\cos 2\theta$
+
+
+    $\theta \in \left(0, \frac{\pi}{4}\right) \cup\left(\frac{3}{4} \pi, \frac{5}{4} \pi\right) \cup\left(\frac{7}{4} \pi, 2 \pi\right)$
+
+综上5.6有极坐标形式，但没有参数方程
+
+\section*{旋转体体积}
+\subsection*{圆台体模型}
+
+由连续曲线$y=f(x)$与$x=a,x=b$及x轴所围成的曲边梯形，绕x轴旋转一周所得的旋转体体积
+
+\vspace{2ex}
+
+$\displaystyle{V_{x}=\int_{a}^{b} \pi f^{2}(x) d x \quad(a<b)}$
+
+\vspace{2ex}
+
+引申1：若绕y=a旋转一周呢？
+
+\vspace{2ex}
+
+$\displaystyle{V_{x}=\int_{a}^{b} \pi[f(x)-a]^{2} d x}$
+
+\vspace{2ex}
+
+引申2：如果同时存在$f_{2}(x), f_{1}(x)$且$f_{2}(x)\ge f_{1}(x) \ge 0$呢？
+   
+\vspace{2ex}
+
+$\displaystyle{V=V_{2}-V_{1}=\pi \int_{a}^{b} f_{2}^{2}(x) d x-\pi \int_{a}^{b} f_{1}^{2}(x) d x}$
+
+\vspace{2ex}
+
+二，如果绕y轴旋转一周，所得旋转体体积为：
+
+\vspace{2ex}
+
+    $\displaystyle{V_{ y}=2 \pi \int_{a}^{b}|x| | f(x)| d x}$
+
+\vspace{2ex}
+    
+    引申1：如果绕x=c时旋转呢？
+
+\vspace{2ex}
+
+    $\displaystyle{V_{ y}=2 \pi \int_{a}^{b}|x-c| | f(x)| d x}$
+
+\vspace{2ex}
+
+    引申2：如果同时有$f_{2}(x),f_{1}(x)$绕y轴旋转的体积呢？
+
+\vspace{2ex}
+
+    $\displaystyle{V=2 \pi \int_{a}^{b} x f_{2}(x) d x-2 \pi \int_{a}^{b} x f_{1}(x) d x}$
+
+
+
+\end{document}

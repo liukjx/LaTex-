@@ -1,0 +1,76 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\usepackage{tikz}
+\usepackage{color}
+\usepackage{graphicx}
+\begin{document}
+
+
+
+\chapter*{第四章 知识框架 \quad 线性微分方程}  
+
+\[
+\text{一阶}    
+\begin{cases}
+    \text{可分离变量(首选)}\\
+    \text{看形式}
+        \begin{cases}
+            \text{齐次方程(分子分母每个元素都同次)令}\frac{y}{x}=u,\mathrm{d}y=\mathrm{d}ux=x\mathrm{d}u+u\mathrm{d}x\\
+            \text{公式法}y^{\prime}+P(x)y=Q(x)\\
+            \text{其他换元，如令}x+y=u,y=\sin t
+        \end{cases}\\
+    \text{颠倒自变量和因变量}\\
+\end{cases}
+\]
+
+
+\[
+\text{二阶}
+    \begin{cases}
+        \text{可降阶的：}y^{\prime \prime}=f(x)\\
+        \text{颠倒自变量和因变量(用到反函数求二阶导的公式)}\\
+        \text{特征方程求对应的齐次方程的通解+ \underline{待定系数法}求特解(只适用于常系数)}\\
+        \qquad \quad \qquad \qquad \qquad \qquad \qquad \qquad \text{也可用算子解法}\\
+        \qquad \quad \qquad \qquad  \text{求出来的特解在每一个其次方程的解里面都存在且系数为1}\\
+    \end{cases}    
+\]
+
+\vspace{4ex}
+
+1. \quad $y^{\prime\prime}+py^{\prime}+qy=e^{\lambda x}P_{m}(x)$
+
+\quad \quad 特解设为$y^{*}=x^{k}R_{m}^{(x)}e^{\lambda x}$
+
+\vspace{2ex}
+
+\quad \quad m代表m次的项式
+
+\[
+k
+\begin{cases}
+    0 \quad \lambda\text{不是}r^{2}+pr+q=0\text{的解}\\
+    1 \quad \lambda\text{是}r^{2}+pr+q=0\text{的其中一个解}\\
+    2 \quad \lambda\text{是}r^{2}+pr+q=0\text{的重根}
+\end{cases}    
+\]    
+
+
+\begin{tabbing}
+    1.若$P_{m}(x)=2x+1$ \hspace{6ex} \= $R_{m}(x)$设为$ax+b$\\
+    2.若$P_{m}(x)=5x^{2}+6x+7$ \> $R_{m}(x)$设为$a^{2}+b^{2}+c$\\
+    3.若$P_{m}(x)=3$ \> $R_{m}(x)$设为a
+\end{tabbing}
+
+然后把$y^{*}$当作y，代入$\left(y^{*}\right)^{\prime \prime}+p\left(y^{*}\right)^{\prime}+q y^{*}=e^{\lambda x}P_{m}(x)$求出这些a，b，c
+
+2.
+
+
+
+
+
+
+
+\end{document}

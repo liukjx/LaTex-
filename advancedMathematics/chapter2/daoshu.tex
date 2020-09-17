@@ -1,0 +1,275 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\begin{document}
+
+\chapter*{第二章 知识框架 \quad 导数问题}  
+
+\[
+\text{求导问题}    
+\begin{cases}
+    \text{导数定义} \lim \limits _{x \rightarrow x_{0}}\frac{f(x)-f(x_{0})}{x-x_{0}}=\lim \limits _{x \rightarrow x_{0} }f^{\prime}(x)=f^{\prime}(x_{0})\\
+    \text{求低阶导的办法}
+    \begin{cases}
+        \text{定义法：如某些抽象无表达式函数在某点导数，表达式分段函数在分段点处带有绝对的的函数}
+        \text{求导公式法:}(\sin x)^{\prime}=\cos x\\
+        \text{其他方法：如泰勒，求导困难，但展开容易}
+    \end{cases}\\
+    \text{求高阶导}\\
+    \text{隐函数求导}
+        \begin{cases}
+            \text{求一次导}
+                \begin{cases}
+                    \text{法一：整个式子对x求导，然后处理}\\
+                    \text{法二：化成}F(x，y)=0\text{型，有公式}\frac{dy}{dx}=-\frac{F^{\prime}x}{F^{\prime}y}
+                \end{cases}\\
+            \text{求两次导,得出一阶导的等式后对整个式子求导}
+        \end{cases}\\
+    \text{反函数求导}
+        \begin{cases}
+            \frac{dx}{dy}=\frac{1}{\frac{dy}{dx}}=\frac{1}{f^{\prime}(x)}\\
+            \frac{d^{2}x}{dy^{2}}=-\frac{f^{\prime}(x)}{(f^{\prime}(x))^{2}}·\frac{1}{f^{\prime}(x)}
+        \end{cases}\\
+    \text{参数所决定函数求导} \frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{y^{\prime}_{t}}{x^{\prime}_{t}} , \frac{d^{2}y}{dx^{2}}=\frac{x^{\prime}_{t}y^{\prime\prime}_{tt}-x^{\prime\prime}_{tt}y^{\prime}_{t}}{(x^{\prime}_{t})^{3}}
+    \text{参数方程是考研热点中的热点，常与以下结合考察}
+        \begin{cases}
+            \text{切线，法线}\\
+            \text{微分方程(其中一个是)}\\
+            \text{其他几何问题}
+        \end{cases}\\
+    \text{复合函数求导}\\
+    \text{可微：主要是理解定义，有一年和泰勒一起考}\\
+    \text{几何应用}
+        \begin{cases}
+            \text{曲率}\\
+            \text{切线}
+                \begin{cases}
+                    1.\text{在}(x_{0},y_{0})\text{某个确切的点的切线方程}y-y_{0}=f^{\prime}(x_{0})(x-x_{0})\\
+                    2.\text{在任一点}(x，y)\text{的切线方程}y-y=f^{x}(x-x)\text{变化的点}
+                \end{cases}\\
+            \text{法线}
+        \end{cases}
+\end{cases}
+\]
+
+\section*{专题一 \quad 求高阶导数问题}
+
+法一：记住几类初等函数的高阶求导公式，要配合一些代数运算
+
+例如：\[(\sin x)^{(n)}=\sin \left(x+\frac{n}{2} x\right)\]
+$$\left(\frac{1}{a x+b}\right)^{(n)}=\frac{(-1)^{n} n!a^{n}}{(a x+b)^{n+1}}$$
+$$\ln (a x+b)^{(n)}=\frac{(-1)^{n-1}(n-1) ! a^{n}}{(a x+b)^{n}}$$
+
+\vspace{3ex}
+
+\noindent 法二：数学归纳法(找规律)
+
+例如：设$f(x)=e^{x} \sin x, \quad \text { 求} f^{(n)}(x)$
+
+\vspace{3ex}
+
+\noindent 法三：公式(适用于函数相乘，求高阶导的形式)，形如求$[f(x) g(x)]^{(n)}$
+
+\vspace{3ex}
+
+\noindent 法四：与展开式一一对应(适用于$F^{(k)}(c)$型)c一般取0，k也可以为n
+%这里缺了一个好像是泰勒展开式？
+
+例：设$f(x)=\left(1+x^{2}\right) \ln (1+x)$,求$f^{(25)}(0)$
+
+\section*{专题二 \quad 驻点 、极点 、最值点 、拐点}
+
+\begin{center}
+(最)极值点：x的值\\
+(最)极值：y的值\\
+拐点，(x，y)坐标
+\end{center}
+
+
+注：极值点处可导，则一定是驻点(导数为0，很多驻值是极值点，例$y=x^{3}(x=0\text{时}))$
+%我有点晕，这个是什么意思，难道这个例子里这一点是极值点么，极大值还是极小值？
+
+
+\subsection*{判断极值点，拐点的方法}
+
+法一：定义法
+
+\vspace{3ex}
+
+\noindent 法二：
+\[
+\text{第一充分条件(以极值点为例)}
+\begin{cases}
+    \text{求出}f^{\prime}(x)\\
+    \text{求出}f(x)\text{的全部驻点和不可导点(抓到两类嫌疑犯)}\\
+    \text{用第一充分条件判别(挨个定罪)}
+\end{cases}
+\]
+
+\vspace{3ex}
+
+\noindent 法三：第二充分条件(适用于易求高阶导，且$x_{0}$题干告诉是哪个点，只让你判别是极小值，极大值的题目)
+
+补充拐点的第二充分条件：若$f^{\prime\prime}(x_{0})=0,且f^{\prime\prime}(x_{0}>0(<0))$，则曲线$y=f(x)$在点$(x_{0},f(x_{0}))$的左侧邻还是凸的(凹的)，右侧邻还是凹的(凸的)
+
+
+\subsection*{判断是值点的方法}
+
+%什么内，没有说清楚
+最值点有可能在端点或   内取得 ，且   内的最值点也一定是极值点
+
+步骤一：求出驻点及不可导点处的函数值\\
+\noindent 步骤二：求出两个端点处的函数值   \quad    (三类嫌疑犯)\\
+\noindent 步骤三：比较三类点的大小 \quad 按 大小判定
+%按什么大小判定，界过
+
+注：不需要用极值的两个充分条件去判断驻点及不可导点是否是极值，只需比较三类点的大小就好，树莓最大的就是最大值点
+
+\section*{专题三 \quad 不等式的证明}
+
+法一：借助求导看单调性，找最值，有时候端点处要借助求极限的方法
+
+例如求证当$x \in (0.1)$时 $\frac{1}{\ln 2}<\frac{1}{\ln(1+x)}-\frac{1}{x}<\frac{1}{2}$
+
+
+\noindent 法二：
+\[
+\text{构造函数求导}\footnote{观察有无拉格朗日，柯西形式决定是构造还是中值}
+    \begin{cases}
+        \text{情形一：形式对等时，把不同参数分列等号两侧，构造函数，}\text{例如函数求证}\\
+        \qquad \qquad  e<a<b \text{时,} a^{b} \text{和} b^{a} \text{的大小关系} \\
+        \text{情形二：整个式子构造函数，有些时候会换出新的元}
+    \end{cases}   
+\]
+
+
+
+
+\noindent 法三：中值定理(拉格朗日和柯西)
+
+
+\noindent 法四：凹凸性 用于两端点处等于0，二阶号恒正(负)的情况，可作图分析
+
+\noindent 法五：二阶保号性：
+
+
+如果$f^{\prime}(x)\ge 0$ 则$f(x) \ge f(x_{0})+f^{\prime}(x_{0})(x-x_{0})$
+
+如果$f^{\prime}(x)\le 0$ 则$f(x) \le f(x_{0})+f^{\prime}(x_{0})(x-x_{0})$
+
+\section*{专题四 \quad 求含参数的两条曲线公共点的个数(等价于求含参数方程的根的个数类问题)}
+    \subsection*{题型一：只含一个未知参数a}
+    方法：
+
+    步骤一：将函数和未知数分置等号两侧，即形如$a=f(x)$(注意分母要不为零)
+
+    步骤二：讨论含未知数一侧函数的增减情况，画出函数简图
+
+    步骤三：让y=a与函数图相交，看交点个数不同时a的取值
+
+    例一：试确定$e^{x}=ax^{2}(a>0)$的根的个数，并指出每个根所在的范围
+
+    例二：求$y=k \arctan x$和y=x交点的个数
+
+    \subsection*{题型二：含两个参数}
+    
+    方法：最好把两个参数都分在同一侧，另一侧是只含x的函数，如果不能就只分一个参数过去(未考过)
+
+
+\section*{专题五 \quad 洛必达法则的说明}
+
+
+\begin{enumerate}
+    \item 必须符合$\frac{0}{0}, \frac{00}{\infty}$型才能用
+    \item $f(x) \quad F(x)$必须在去心邻域内可导
+    \item $\lim \limits_{x \rightarrow \alpha} \frac{f^{\prime}(x)}{F^{\prime}(x)}=A$(或无穷)时，洛必达有效，此时$\lim \limits_{x \rightarrow \alpha} \frac{f^{\prime}(x)}{F^{\prime}(x)}=A$(或无穷)
+    \item $\lim \limits_{x \rightarrow a} \frac{f^{\prime}(x)}{F^{\prime}(x)}$不存在也不为无穷时，洛必达失效，此时$\lim \limits_{x \rightarrow a} \frac{f^{\prime}(x)}{F^{\prime}(x)}$存在与否不确定，需换其他方法求
+    \item $\lim \limits_{x \rightarrow \alpha} \frac{f(x)}{F(x)}=A$(或无穷),不能说明$\lim \limits _{x \rightarrow \alpha} \frac{f^{\prime}(x)}{F^{\prime}(x)}=A$(或无穷)
+\end{enumerate}
+
+\section*{专题六 \quad 只含$\xi$ 的罗尔定理类问题}
+
+\subsection*{还原法(含$\displaystyle{\frac{f^{(n-1)}(x)}{f^{(n)}(x)}}$)}
+
+步骤一：将所证中的$\xi$ 全换成x
+
+\vspace{2ex}
+
+\noindent 步骤二：利用$\displaystyle{\frac{f^{\prime}(x)}{f(x)}=\left[\ln f(x)\right]} \quad (\text{或}\frac{f^{\prime\prime}(x)}{f^{\prime}(x)}=\left[\ln f^{\prime}(x)^{\prime}\right]) (\text{或}\frac{f(x)}{F(x)}=\left[\ln F(x)\right]^{\prime})$
+将函数进行还原
+
+\vspace{2ex}
+
+\noindent 步骤三：将函数合并成$\displaystyle{\left[m \varphi (x)\right]^{\prime}=0}$，通过题干条件，$\varphi (x)$有两个函数值正好相等，$\varphi ^{\prime}(\xi )=0$经过变形正好就是要证的结论
+
+\subsection*{分组构造法}
+
+步骤一：雷同
+
+\vspace{2ex}
+
+\noindent 步骤二：可能出现 $\displaystyle{\frac{f^{\prime}(x)-k}{f(x)-kx}=\left[\ln (f(x)-kx)\right]^{\prime}},(\text{或}\frac{f^{\prime}(x)}{f(x)-x}=\left[\ln (f(x)-\lambda) \right]^{\prime})$的形式，将函数还原
+
+\vspace{2ex}
+
+\noindent 步骤三：雷同
+
+\subsection*{凑微法}
+
+步骤一：雷同
+
+\vspace{2ex}
+
+\noindent 步骤二：需要自己观察出所证结论的原函数，有时可借助求不定积分的办法求原函数，当然有些函数的原函数
+可能是变上限函数的形式
+
+\vspace{2ex}
+
+\noindent 步骤三：根据题干，原函数有两个点的函数值相等，使用罗尔定理得到的中项还是要证结论
+
+\section*{专题七 \quad 含$\xi,a,b$的中值定理 }
+
+首先看$\xi$和a，b是否能分离，如果可以分离到等号两侧，尝试对a，b这一侧使用柯西或拉格朗日，有时候a，b可能是具体的数值
+
+\vspace{1ex}
+
+\noindent 如果不能分离，整个让说明的式子构造函数，去寻找其原函数，去寻找其原函数类似前一个专题讲的凑微法
+%说明的式子构造函数是什么意思 
+
+\vspace{2ex}
+
+例一：$f(x)\in C[a,b]$在开区间(a,b)内可导，证明存在$\xi \in (a,b)$使得
+$f(b)-f(a)=\xi f^{\prime}(\xi) \ln \frac{b}{a}$
+
+例二：设a>0，b>0,(a<b)证明$\exists \xi \in (a,b)$使得$a e^{b}-b e^{a}=(a-b)(1-\xi )^{e^{\xi }}$
+
+\section*{专题八 \quad 所证结论中含$\xi$ y(也可能同时含a,b)}
+
+方法一
+
+所证结论中除常数外只含$f^{\prime}(\xi ),f^{\prime}(y)$，证明方法是：找三个点，两次使用拉格朗日中值定理
+
+\noindent 方法二
+
+所证结论中含$\xi,y$，但设计两个中值定理的项的复杂程度不同
+，将$\xi,y$分置等号两侧，让a，b分离到中值项形式简单的那一侧，等号两侧的中值项可能是经过拉格朗日或柯西得到的.(大概率中值项形式简单的那一侧使用拉格朗日定理得到的，
+中值项复杂的那一侧使用柯西定理得到的不绝对)你可以用求不定积分的方法求一下每一个中值项的原函数，如果能求出原函数，那很可能就是用拉格朗日定理得到的中项
+
+\noindent 方法三
+
+所证结论中含$\xi, y$涉及两个中项的形式复杂程度一样(但未必完全一样)证明的方法一般是三个点分成两段，其中一段使用拉格朗日得到了第一个中项，另一段使用拉格朗日得到第二个中项，当然两个中项也有可能都是通过
+柯西得到的，具体是拉格朗日还是柯西得到的中值项，还是可以用求不定积分(凑微分)的方法求一下原函数
+
+\section*{专题九 \quad 泰勒展开的经验}
+
+1.二阶以上的证明可以考虑泰勒展开，区间展开点不好说
+，可以不停尝试，如果告诉某一点导数有等于0，可以优先考虑在该点处展开,因为展开形式变得简单
+
+\noindent 2.如果区间对称，且告诉你两个端点函数值，则很有可能将两个端点分别在区间中点(0点)处展开，写出两个式子
+%两个式子分别是啥
+
+
+
+
+\end{document}

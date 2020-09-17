@@ -1,0 +1,406 @@
+\documentclass[a4paper,11pt]{book}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage[hmargin=1.25in,vmargin=1in]{geometry}
+\begin{document}
+
+\chapter*{第一章 知识框架 \quad 极限与连续}  
+
+\[
+\text{极限问题}
+\begin{cases}
+    \text{函数类}
+        \begin{cases}
+            \text{普通函数类} \frac{0}{0}\ 
+            \frac{\infty}{\infty}\ 
+            1^{\infty} \  0·\infty\ 
+            \infty-\infty\ 
+            \infty^0 \ 
+            0^0\ \text{七种类型}\\
+
+
+            \text{带有变上限函数的极限问题}
+
+        \end{cases}\\
+    \text{数列类}
+        \begin{cases}
+            \text{高中所学}
+            \begin{cases}
+                \text{n项和：放缩 ,裂项相消(考研未考)}  \\
+                \text{n项连乘：放缩,分子分母相抵(考研未考)}
+            \end{cases}\\
+        \text{定积分定义法} \\
+
+        \text{求递推数列的极限}    
+        \end{cases}\\
+        
+    \text{极限的衍生物：渐近线}
+\end{cases}\\
+\]
+%人为地增加段落之间的垂直间距
+\vspace{2ex}
+\[
+\text{连续问题}    
+\begin{cases}
+            \text{判断间断点及类型}\\
+            \text{判断分段表达式在分断点处是否连续}
+            \lim\limits _{x \rightarrow x_{0}} f\left(x\right)=f\left(x_{0}\right)\\
+            \text{导数在某点处连续}\\
+\end{cases}
+\]
+%人为地增加段落之间的垂直间距
+\vspace{5ex}
+
+\section*{一 \quad 七类不定型的求极限问题}
+\subsection*{\[\frac{0}{0}\text{型}\]}
+
+\vspace{2ex}
+\emph{法一}：泰勒展开，根据分母或分子其中一个最低次数(比较容易看出来的)
+来量身定做另一部分，把另一部分从0.1到该次数的每一项都找到\\
+
+
+\noindent  \emph{法二}：洛必达，并不提倡，但一些变上限函数的分式需要使用该法\\
+
+
+\noindent  \emph{法三}：等价无穷小，初学者不建议使用，容易出错，实际上，等价无穷小是
+泰勒展开的初等形式(弟弟)，但要熟背课本上同阶无穷小，等价无穷小
+高阶无穷小，低阶无穷小和k阶无穷小的定义。
+
+
+\subsection*{\[\frac{\infty}{\infty}\text{型}\]}
+
+法一：抓大头(抓主要矛盾)
+\begin{enumerate}
+\item 同一类函数找最高次数 \[\lim_{0 \rightarrow \infty}\frac{a_{n} x^{n}+a_{n} x^{n-1}+\cdots+a_{0}}{b_{m} x^{m}+b_{m-1} x^{m-1}+\cdots+b_{0}}=\left\{\begin{array}{l}
+    \frac{a_{n}}{b_{m}}, n=m \\
+    0, n<m \\
+    \infty, n>m
+    \end{array}\right.\]
+\item 不同类函数\[\ln ^{\alpha} x \leq x^{\beta} \leq a^{x}(\alpha>0, \beta>0, a>1)\]
+\end{enumerate} 
+
+\noindent 法二：洛必达 \\
+
+\noindent 法三：把$\frac{\infty}{\infty}$转化为$\frac{0}{0}$型，再用$\frac{0}{0}$型的方法
+
+
+\subsection*{\[1^{\infty}\text{型}\]}
+利用$\lim\limits_{\begin{array}{l}
+    f(x) \rightarrow 0 \\
+    g(x) \rightarrow \infty
+    \end{array}} [1+f(x)]^{g(x)}=e^{f(x) g(x)}$落脚点就是求这个极限
+\subsection*{\[0 \times \infty \text{型}\]}
+
+法一： 转化为$\frac{0}{0}$型\\
+法二： 转化为$\frac{\infty}{\infty}$型\\
+法三： 记住两个重要公式
+\begin{enumerate}
+    \item \[\lim _{x \rightarrow 0^{+}} x^{\delta}(\ln x)^{k}=0\]
+    \item \[\lim _{x \rightarrow + \infty} e^{-k x} x^{\delta}=0\] \qquad 其中$\delta > 0，k > 0$
+\end{enumerate}
+法四： 对“0”进行泰勒展开
+
+\subsection*{\[\infty - \infty \text{型}\]}
+
+法一：通分后转化成$\frac{0}{0}$ 。例：求$\lim\limits _{x \rightarrow 0^{+}} \left(\frac{1}{\sin ^{2} x}-\frac{\cos ^{2}x}{x^{2}}\right)$ \\
+
+
+\noindent 法二：把$\infty - \infty$转化成$0 \times \infty$型，再做后续讨论，一般是对“0”进行泰勒展开\\
+
+例如求\[\lim _{x \rightarrow - \infty }(\sqrt{x^{2}+2 x+\sin x}+x+2)\]
+
+\subsection*{\[\infty^0 \text{型}\]}
+法一： 先取对数再加指数，化为指数形式再分析
+
+例如求 \[\lim _{x \rightarrow 0}\left(\frac{1}{\sqrt{x}}\right)^{\tan x} \]
+
+\noindent 法二： 夹逼准则
+
+例如求\[\lim_{x \rightarrow + \infty}\left(2^x+3^3+4^x\right)^{\frac{1}{x}}\]
+
+\subsection*{\[0^0 \text{型}\]}
+
+先取对数再加指数，化为指数形式再分析
+
+例如求\[\lim \limits_{x\rightarrow - \infty} \left(\frac{\pi}{2}+\arctan x\right)^{\frac{1}{x}}\]
+
+\subsection*{补充1：使用拉格朗日求极限(一般式中有或者其中一部分是两项相减的形式)}
+
+$\infty \times 0$ 型  \quad $\lim\limits _{x\rightarrow + \infty}x^{2}\left(\arctan \frac{1}{x} - \arctan \frac{1}{x+1}\right)$
+
+\vspace{2ex}
+
+\noindent $\frac{0}{0}$ 型  \qquad $\lim\limits _{x \rightarrow 0}\frac{\tan(\tan x-\tan(\sin x))}{x-\sin x}$
+
+\vspace{2ex}
+
+\noindent $\infty -\infty $型 \quad $\lim \limits_{x \rightarrow +\infty}(1+x)^{\alpha}-x^{\alpha}\qquad (a > 0)$
+
+
+\subsection*{补充2：$0\times \text{有界量}=0\text{型(未考)}$}
+二元函数极限经常出现
+
+\vspace{2ex}
+
+例如求\[\lim_{x\rightarrow + \infty }\frac{x^{3}+x^{2}+1}{2^{x}+x^{3}}\left(\sin x +\cos x\right)\]
+
+(注：含$x^{x}-x^{\sin x}$类型不能直接用拉格朗日，需换成$e^{x\ln x}-e^{\sin x \ln x}$再用，b相当于$x\ln x,\text{a相当于}\sin x \ln x$)
+
+\subsection*{必须要记住的重要极限公式}
+
+\begin{enumerate}
+\item \[\lim _{n \rightarrow \infty} \sqrt[n]{n}=1\]
+\item \[lim _{n \rightarrow + \infty} \sqrt[n]{a}=1\]
+\item \[\lim_{x\rightarrow 0^{+}}x^{\delta } \left(mk\right)^{k}\qquad \text{(常数}\delta>0,k>0\text{)反常积分}\]
+\item  \[\lim_{x \rightarrow +\infty}x^{k}·e^{-\delta x}=0\qquad \text{(常数}\delta>0,k>0\text{)反常积分}\]
+\item  \[\lim _{x \rightarrow 0}a^{x}-1 \sim x \ln a\]
+\item  \[\lim _{x \rightarrow 0}1-\cos^{\alpha}x \sim \frac{\alpha}{2}x^{2}\]
+\item \[\arctan x \sim x - \frac{x^{3}}{3}\]
+\item \[\tan x \sim x + \frac{x^{3}}{3}\]
+\item  \[\arcsin x \sim x + \frac{x^{3}}{6}\]
+\item  \[\sin x \sim x -\frac{x^{3}}{6}\]
+\item   \[\lim _{n\rightarrow \infty}n!=\left(\frac{n}{e}\right)^{n}\]
+\begin{center}
+     这些公式数一，数三考生尽量记住，数二不用
+\end{center}
+\end{enumerate}
+
+\section*{专题一  \quad 渐近线问题总结(实则是极限问题)}
+
+\subsection*{铅直渐近线} 
+
+实质上是找无穷间断点(即某点出左右极限有一个或两个趋于无穷)铅直渐近线可以有无数条，如$y=\tan x$
+(无穷间断点)
+铅直渐近线可能在什么情况下出现呢？
+\begin{itemize}
+\item 分母为0
+\item $\ln f(x)$，当$f(x)\rightarrow 0^{+}时$
+\item $\tan f(x)$，当$f(x)\rightarrow k \pi +\frac{\pi}{2}$时
+\item $\lim\limits _{n \rightarrow \infty}x^{n}$,当$x \rightarrow 1^{+}时$
+\item 
+\end{itemize}
+\subsection*{水平渐近线}
+实质上是求$\lim\limits_{x \rightarrow +\infty}f(x)
+,\lim\limits_{x \rightarrow -\infty}f(x)$这两个极限，如果极限存在，就是有水平渐近线
+因此水平渐近线最多有两条。(根据课本的阐述，$\begin{array}{l}
+    x \rightarrow+\infty \\
+    x \rightarrow-\infty
+\end{array}$时，极限存在的图像就是水平渐近线)
+\subsection*{斜渐近线}
+即求
+\[\lim _{x \rightarrow \infty}f(x)=ax+b\]
+
+步骤一： 求\[\lim_{x\rightarrow\infty}\frac{f(x)}{x}=a \quad \left(\frac{\infty}{\infty}\text{型}\right)\]
+
+步骤二：求\[b=\lim _{x \rightarrow \infty}f(x)-ax\quad \left(\infty - \infty\right)\text{型}\]
+
+因此斜渐近线最多有两条，分别是x趋于$+ \infty$ 和$- \infty$ 
+
+\subsection*{总结}
+铅直渐近线可单独找，斜渐近线和水平渐近线都是看$\begin{array}{l}
+    x \rightarrow+\infty \\
+    x \rightarrow-\infty
+\end{array}$，且不可能同时在$+ \infty$ （或$- \infty$） 既有水平渐近线和斜渐近线，因此两者加起来最多有两条
+，可以一块找，先看$\lim\limits_{x \rightarrow + \infty}f(x)$是否存在，若存在则是水平渐近线
+若$\lim\limits_{x \rightarrow + \infty}f(x)$趋于无穷，再按求斜渐近线的步骤求a,b，a,b必须同时存在才行
+求完了$x \rightarrow + \infty$,再求 $x \rightarrow - \infty$
+也就是先看水平，再看斜渐近线
+
+\subsection*{专题一的拓展：求参数方程的渐近线方程(反数一，数二要求) \[\left\{\begin{array}{l}
+    x=x(t) \\
+    y=y(t)
+    \end{array}\right.\]}
+步骤一： 先判断t的定义域
+
+
+\noindent 步骤二： 可先找铅直渐近线即求出$y(t)\rightarrow\left\{\begin{array}{l}
+     +\infty \\
+     -\infty
+\end{array}\right.$时的t的值。设为t 如果$x(t_{0})$等于常数C，则铅直渐近线就是x=C
+
+\noindent 步骤三： 水平渐近线和斜渐近线一块找，先求出$y(t)\rightarrow\left\{\begin{array}{l}
+    +\infty \\
+    -\infty
+\end{array}\right.$时$t_{0}$的值，再带入$y(t_{0})$，如果$y(t_{0})=C$
+则此时$y(t_{0})=C$就是一条水平渐近线
+；若$y(t_{0})\rightarrow \infty$再按求斜渐近线的两个步骤
+1.$a=\lim \limits _{t \rightarrow t_{0}}\frac{y(t)}{x(t)}$\quad
+2.$b=\lim \limits_{t \rightarrow t_{0}}y(t)-ax(t)$
+
+
+(注：步骤二、三中的$t_0$不唯一，也可能趋于无穷)
+
+\section*{专题二  \quad 求形如$a_{n+1}=f(a_{n})$递推数列的极限问题}
+\subsection*{方法一}
+针对$f(a_{n})$含根式形式(其他形式有时也可用，形如$a_{n+1}=C_{1}+\frac{1}{a_{n}+C_{2}}$
+其中$C_{1}，C_{2}$为常数
+
+\vspace{2ex}
+例，设$x_{1}= \qquad x_{n}=\sqrt{a+x_{n-1}}$求极限$\lim \limits _{x \rightarrow \infty}x_{n}$
+
+步骤一：假设极限存在，设$\lim \limits _{n \rightarrow \infty}a_{n+1}=\lim \limits _{n \rightarrow \infty}a_{n}=A$
+求出极限A
+
+步骤二：用夹逼准则，证明极限就是A
+
+\subsection*{方法二}
+
+利用单调有界数列必有极限的准则
+
+步骤一： 
+\[
+\text{证明有界性}
+    \begin{cases}
+        \text{使用高中学过的不等式}\\
+        \text{使用一些常规函数的大小关系}
+            \begin{cases}
+                x>0\text{时}，\sin x<x<\tan x \\
+                x≥\ln(1+x)≥\frac{x}{1+x} \\
+                e^{x}> 1+x
+            \end{cases}\\
+        \text{使用数学归纳法}\\
+    \end{cases}    
+\]
+
+
+
+步骤二：
+\[
+\text{证明单调性}
+    \begin{cases}
+        \text{方法一：看}a_{n+1}-a_{n}\text{的正负}\\
+        \text{方法二：对}a_{n+1}=f(a_{n})\text{构造函数}y=f(x)
+        \text{若}f(x)>0 \text{则单调}\\
+        \indent \indent \quad \text{其中}a_{2}>a_{1}\text{则单增}a_{2}<a_{1}\text{则单减}\\
+        \text{方法三：}\frac{a_{n+1}}{a_{n}}\text{和1比较}
+            \begin{cases}
+                \{a_{n}\}>0 \text{，}\frac{a_{n+1}}{a_{n}}>1\text{是单增}\\
+                \{a_{n}\}<0 \text{，}\frac{a_{n+1}}{a_{n}}<1\text{是单增}
+            \end{cases}\\
+    \end{cases}    
+\]
+
+\section*{专题三  \quad 含变上限的$\frac{0}{0},\frac{\infty}{\infty}$型极限问题}
+
+\subsection*{步骤一：}
+
+当被积函数的自变量或者被积函数中含有和积分变量不一样的变量时
+
+例如$\displaystyle{\int _{0}^{x}f(t-x)dt}$，$\displaystyle{\int _{0}^{x}\sqrt{t-x}e^{t}dt}$
+要先换元 令$t-x=u$
+
+\subsection*{步骤三：}
+
+使用洛必达或积分中值定理，有时候会混合使用
+
+开挂1：$f(x)\text{和}g(x)\text{在}x=0\text{的某领域内连续，且}$
+$\lim \limits _{x \rightarrow 0 }\frac{f(x)}{g(x)=1}$，则
+
+\[
+    \int _{0}^{x}f(t)\mathrm{d}t \sim \int _{0}^{x}g(t)dt  
+\]
+
+\[
+    x \rightarrow 0
+\]
+
+开挂2：当$x \rightarrow 0 \text{时} f(x) \rightarrow 0 \text{若}f(x) \sim A x^{k}(k \ge 0)\text{，则}f(x) \sim 
+\frac{A}{kH}x^{k+1}$
+
+\section*{专题四  \quad 利用定积分定义求极限}
+\subsection*{定积分定义法}
+
+\[
+  \lim _{n \rightarrow \infty} \sum _{i = 1}^{kn}f(\frac{i}{n}) \times \frac{1}{n}=\int_{0}^{k}f(x)dx  
+\]
+
+\[\text{注：}\lim _{n \rightarrow \infty}\sum _{i=a}^{k(n+b)}f(\frac{i}{n})\times \frac{1}{n+C}=\int _{0}^{k}f(x)dx
+\left(\text{其中，a，b，c为任意整数}\right)
+    \]
+
+\subsection*{注意事项1}
+
+对于连乘数列求极限问题，可以考虑先取$\ln$，再取e,这样连乘就变成了叠加，然后再使用
+定积分定义(未考过)
+
+例如：求            
+
+$$\lim _{n \rightarrow \infty} \frac{\sqrt[n]{(n+1)(n+2) \cdots(n+n)}}{n}
+\qquad \text{(未考过)}$$
+
+%上一个公式在\[\]里不能正常展现，只能是$$$$里，不知道为什么
+\subsection*{注意事项2}
+有时候分母不同时需要把分母放缩成$\frac{1}{n},\frac{1}{n+1}$这样
+的同分母，然后使用夹逼准则(未考)
+
+例：求极限$\lim \limits _{n \rightarrow \infty}\left(\frac{ne^{\frac{1}{n}}}{n^{2}+1}+\frac{ne^{\frac{2}{n}}}{n^{2}+2}+\cdots+\frac{ne^{\frac{n}{n}}}{n^{2}+n}\right)$
+
+\section*{二  \quad 连续型问题汇总}
+
+连续即$\lim \limits_{x \rightarrow x_{0}}f(x)=f(x_{0})$
+
+\subsection*{不连续的情况}
+\[
+\text{\ }
+\begin{cases}
+    \text{情形一：}\lim \limits_{x\rightarrow x_{0}}f(x) \text{存在},f(x_{0})\text{有定义，但是}\lim\limits_{x\rightarrow x_{0}}f(x)\ne f(x_{0})\\
+    \text{情形二：}f(x_{0})\text{无定义}
+        \begin{cases}
+            \text{分母为0，例}\frac{x^{2}-1}{x-1}\left(\text{x=1是间断点}\right)\\
+            \tan \left(\frac{\pi}{2}+k \pi \right)\\
+            \ln 0
+        \end{cases}\\
+    \text{情形三：}\lim \limits_{x\rightarrow x_{0}} f(x)不存在
+        \begin{cases}
+            \text{左右极限存在但不相等}\\
+            \text{左右极限至少有一个不存在}\\
+        \end{cases}       
+\end{cases}
+\]
+
+\subsection*{间断点可能会在什么情况下出现？}
+
+不连续的地方即间断点
+
+\[
+\text{间断点可能会在什么情况下出现？}
+\begin{cases}
+    1.\text{分母等于}0\\
+
+    2.\tan f(x) \quad f(x)\rightarrow k \pi + \frac{\pi}{2}\\
+
+    3.\ln g(x) \quad g(x) \rightarrow 0^{+}\\
+
+    4.\text{分段表达式的分界点处}\\
+
+    5.\lim \limits_{n \rightarrow \infty} f(x)\text{型，如}\lim_{n\rightarrow \infty}\frac{x^{2n}+2x+3}{x^{2n+1}+x+1}\\
+
+    6.\text{有绝对值的情况；如}f(x)=\frac{|x|}{x}\\
+\end{cases}
+\]
+
+\subsection*{如何判断具体是哪类间断点？}
+
+\vspace{5ex}
+
+\[
+\text{判断左右极限是否存在}
+\begin{cases}
+        \text{是：第一类间断点}
+        \begin{cases}
+            \text{可去}
+                \begin{cases}
+                    1.\text{左极限=右极限}\ne f(x_{0})\\
+                    2.\text{左极限=右极限，但}f(x_{0})\text{不存在}
+                \end{cases}\\
+            \text{跳跃：左极限}\ne \text{右极限)}(f(x_{0})\text{无关}
+        \end{cases}\\
+        \text{否：第二类间断点}
+        \begin{cases}
+            \text{无穷间断点}\\
+            \text{震荡间断点，目前只有}\sin\frac{1}{x}，\frac{1}{x}\sin \frac{1}{x}
+        \end{cases}
+\end{cases}
+\]
+
+\end{document}
